@@ -1,0 +1,26 @@
+TAILORPRO ATELIER — MONGODB EDITION
+==================================
+
+1. Extract the ZIP.
+2. Open Terminal in this folder.
+3. Run: docker compose up --build
+4. Wait for the services to start.
+5. Open http://localhost:3000
+
+Useful links:
+- App:             http://localhost:3000
+- Database page:   http://localhost:3000/database
+- FastAPI docs:    http://localhost:8000/docs
+- API health:      http://localhost:8000/health
+
+MONGODB COMPASS
+===============
+Open MongoDB Compass and connect with:
+  mongodb://localhost:27018
+Then expand the database named `tailorpro`. You will see all 12 ERD collections and their documents. Records added/edited/deleted in the TailorPro app are saved to MongoDB.
+
+The database is exposed on host port 27018 to avoid colliding with a local MongoDB server on 27017. If you change MONGO_PORT in a .env file next to docker-compose.yml, use that port in Compass too.
+
+The first Docker build may take a few minutes. Keep the terminal open while using the app. Stop with Ctrl+C. Restart with `docker compose up`.
+
+IMPORTANT: Do not use `docker compose down -v` unless you intend to delete the stored MongoDB data.
